@@ -3,4 +3,16 @@ public static class Tags
 {
     //Buttons Pressed
     public static string BUTTON_FIRE = "Fire1";
+
+    //Animator States
+    public static string ANIM_WALK = "IsWalking";
+    public static string ANIM_ATTACK = "isAttacking";
+    public static string ANIM_DYING = "isDying";
+    public static string ANIM_IDLE = "DS_onehand_idle_A";
+
+    //Gamobject Names
+    public static string OBJ_PLAYER_NAME = "Player";
+
+    //Method Names
+    public static string METHOD_DAMAGETAKEN = "DamageTakenWhileStationary";
 }

@@ -58,6 +58,7 @@ public class Weapon : MonoBehaviour
     //play the effects of where the raycast hit
     private void PlayHitFX(RaycastHit hit)
     {
-        Instantiate(hitParticles, hit.point, Quaternion.LookRotation(hit.normal));
+       GameObject vfx = Instantiate(hitParticles, hit.point, Quaternion.LookRotation(hit.normal));
+       Destroy(vfx, .5f);
     }
 }

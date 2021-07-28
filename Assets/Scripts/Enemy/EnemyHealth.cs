@@ -11,7 +11,9 @@ public class EnemyHealth : MonoBehaviour
     //deducts the hitpoints of the GameObject
     public void DeductHealth(float damage)
     {
-            enemyHealth -= damage;
+        BroadcastMessage(Tags.METHOD_DAMAGETAKEN);
+        
+        enemyHealth -= damage;
 
         if (enemyHealth <= 0)
         {
@@ -23,6 +25,8 @@ public class EnemyHealth : MonoBehaviour
     //Destroys the GameObject
     public void EnemyDies()
     {
-        Destroy(gameObject);
+        Animator myAnim = GetComponent<Animator>();
+        myAnim.SetBool(Tags.ANIM_DYING, true);
+        Destroy(gameObject,1f);
     }
 }
