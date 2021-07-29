@@ -3,6 +3,7 @@ public static class Tags
 {
     //Buttons Pressed
     public static string BUTTON_FIRE = "Fire1";
+    public static string MOUS_SCROLL_WHEEL = "Mouse ScrollWheel";
 
     //Animator States
     public static string ANIM_WALK = "IsWalking";
@@ -15,4 +16,7 @@ public static class Tags
 
     //Method Names
     public static string METHOD_DAMAGETAKEN = "DamageTakenWhileStationary";
+
+    //Tags
+    public static string TAGS_ENEMY = "Enemy";
 }

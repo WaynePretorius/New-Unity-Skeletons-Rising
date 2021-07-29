@@ -368,7 +368,7 @@ GameObject:
   - component: {fileID: 8537089295098276011}
   - component: {fileID: 8349880275298178601}
   m_Layer: 0
-  m_Name: Carbine
+  m_Name: Shotgun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -383,14 +383,14 @@ Transform:
   m_GameObject: {fileID: 8537089295100278379}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.5, z: 4}
   m_Children:
   - {fileID: 8537089295100045897}
   - {fileID: 8537089295100045901}
   - {fileID: 8537089295100045891}
   - {fileID: 8537089295100045893}
   - {fileID: 7072863205173747494}
-  - {fileID: 2114935370067183482}
+  - {fileID: 5498756124744226401}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -421,7 +421,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25f311c6bbd46e0448befa180cda78ed, type: 2}
+  - {fileID: 2100000, guid: ec6ed6b6ce444bd4d884c47ac4d4cf10, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -461,7 +461,7 @@ MonoBehaviour:
   zoomMouseY: 1
   zoomMouseX: 1
   FPSCamera: {fileID: 0}
-  fireGun: {fileID: 2114935370053026362}
+  fireGun: {fileID: 5498756124725875489}
   hitParticles: {fileID: 1236746508695083304, guid: 0c27e0b76440afd42b4a3c010ad54d28, type: 3}
   fxParent: {fileID: 0}
 --- !u!1 &8537089295100278381
@@ -627,7 +627,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &2068390273191994575
+--- !u!1001 &5594076508178806228
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -640,19 +640,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.3
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.216
+      value: 0.215
       objectReference: {fileID: 0}
     - target: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
       propertyPath: m_LocalPosition.y
@@ -696,13 +696,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
---- !u!4 &2114935370067183482 stripped
+--- !u!4 &5498756124744226401 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 138951322550985653, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
-  m_PrefabInstance: {fileID: 2068390273191994575}
+  m_PrefabInstance: {fileID: 5594076508178806228}
   m_PrefabAsset: {fileID: 0}
---- !u!198 &2114935370053026362 stripped
+--- !u!198 &5498756124725875489 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 138951322531587829, guid: 31d650e8ba52cd04abdd227885510400, type: 3}
-  m_PrefabInstance: {fileID: 2068390273191994575}
+  m_PrefabInstance: {fileID: 5594076508178806228}
   m_PrefabAsset: {fileID: 0}

@@ -19,6 +19,8 @@ public class DeathHandler : MonoBehaviour
     {
         manager.gameObject.SetActive(true);
         Time.timeScale = 0;
+        FindObjectOfType<WeaponCycler>().enabled = false;
+        FindObjectOfType<Weapon>().enabled = false; 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
