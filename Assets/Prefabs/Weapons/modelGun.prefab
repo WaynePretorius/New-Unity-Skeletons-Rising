@@ -96,4 +96,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 100
   damage: 25
+  zoomDistance: 50
+  zoomMouseY: 1
+  zoomMouseX: 1
+  timebetweenShots: 1
   FPSCamera: {fileID: 0}
+  fireGun: {fileID: 0}
+  hitParticles: {fileID: 0}
+  fxParent: {fileID: 0}
+  ammoType: 2

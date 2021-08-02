@@ -6,13 +6,13 @@ public class Ammo : MonoBehaviour
 {
     //variables declared at the start
     [Header("Ammo Settings")]
-    [SerializeField] private int ammoAmount = 8;
-    [SerializeField] AmmoSlot[] ammoslot;
+    [SerializeField] AmmoSlot[] ammoSlots;
 
     //function for declared variables
-    public int AmmouAmount
+    public int GetAmmoAmount(AmmoType ammoType)
     {
-        get { return ammoAmount; }
+        int currentAmmo = GetAmmoSlot(ammoType).ammoAmount;
+        return currentAmmo;
     }
 
     [System.Serializable]
@@ -24,14 +24,27 @@ public class Ammo : MonoBehaviour
     }
 
     //reduces the amount of ammo
-    public void ReduceAmmo()
+    public void ReduceAmmo(AmmoType ammoType)
     {
-        ammoAmount--;
+        GetAmmoSlot(ammoType).ammoAmount--;
     }
 
     //increases the amount of ammo
-    public void IncreaseAmmo(int ammo)
+    public void IncreaseAmmo(int ammo, AmmoType ammoType)
     {
-        ammoAmount += ammo;
+        GetAmmoSlot(ammoType).ammoAmount += ammo;
+    }
+
+    //see what type of ammo we use
+    private AmmoSlot GetAmmoSlot(AmmoType ammoType)
+    {
+        foreach(AmmoSlot ammoSlot in ammoSlots)
+        {
+            if(ammoSlot.ammoType == ammoType)
+            {
+                return ammoSlot;
+            }
+        }
+        return null;
     }
 }

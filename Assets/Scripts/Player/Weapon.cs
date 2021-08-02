@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private ParticleSystem fireGun;
     [SerializeField] private GameObject hitParticles;
     [SerializeField] private Transform fxParent;
+    [SerializeField] private AmmoType ammoType;
     
     private WeaponZoom zoom;
     private Ammo ammoSlot;
@@ -38,9 +39,20 @@ public class Weapon : MonoBehaviour
     private void EnableSettings()
     {
         canShoot = true;
+        ZoomSettingsOnEnable();
+    }
+
+    //all options for zooming when the weapon is enabled
+    private void ZoomSettingsOnEnable()
+    {
         zoom.ZoomDistance = zoomDistance;
         zoom.MouseZoomX = zoomMouseX;
         zoom.MouseZoomY = zoomMouseY;
+        if (zoom.IsZooming)
+        {
+            zoom.IsZooming = false;
+            zoom.ZoomWeapon();
+        }
     }
 
     // Update is called once per frame
@@ -53,7 +65,7 @@ public class Weapon : MonoBehaviour
     //Fire the weapon
     private void FireWeapon()
     {
-        if (Input.GetButton(Tags.BUTTON_FIRE) && ammoSlot.AmmouAmount >= 0)
+        if (Input.GetButton(Tags.BUTTON_FIRE) && ammoSlot.GetAmmoAmount(ammoType) >= 0)
         {
             if (canShoot)
             {
@@ -66,7 +78,7 @@ public class Weapon : MonoBehaviour
     {
         ProcessRayCastForHits();
         FireFX();
-        ammoSlot.ReduceAmmo();
+        ammoSlot.ReduceAmmo(ammoType);
         canShoot = false;
         yield return new WaitForSeconds(timebetweenShots);
         canShoot = true;

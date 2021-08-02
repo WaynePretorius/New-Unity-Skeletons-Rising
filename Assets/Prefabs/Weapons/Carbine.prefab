@@ -460,10 +460,12 @@ MonoBehaviour:
   zoomDistance: 50
   zoomMouseY: 1
   zoomMouseX: 1
+  timebetweenShots: 1
   FPSCamera: {fileID: 0}
   fireGun: {fileID: 2114935370053026362}
   hitParticles: {fileID: 1236746508695083304, guid: 0c27e0b76440afd42b4a3c010ad54d28, type: 3}
   fxParent: {fileID: 0}
+  ammoType: 0
 --- !u!1 &8537089295100278381
 GameObject:
   m_ObjectHideFlags: 0

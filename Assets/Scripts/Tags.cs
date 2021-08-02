@@ -19,4 +19,5 @@ public static class Tags
 
     //Tags
     public static string TAGS_ENEMY = "Enemy";
+    public static string TAGS_PLAYER = "Player";
 }
