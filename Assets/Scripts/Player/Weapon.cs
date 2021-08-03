@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Weapon : MonoBehaviour
 {
@@ -20,9 +21,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private GameObject hitParticles;
     [SerializeField] private Transform fxParent;
     [SerializeField] private AmmoType ammoType;
+    [SerializeField] private TMP_Text ammoText;
+    [SerializeField] private AudioClip gunSound;
     
     private WeaponZoom zoom;
     private Ammo ammoSlot;
+    private AudioSource myAudio;
 
     //states of the game
     private bool canShoot = true;
@@ -32,6 +36,7 @@ public class Weapon : MonoBehaviour
     {
         zoom = GetComponentInParent<WeaponZoom>();
         ammoSlot = GetComponentInParent<Ammo>();
+        myAudio = GetComponent<AudioSource>();
         EnableSettings();
     }
 
@@ -60,12 +65,13 @@ public class Weapon : MonoBehaviour
     {
         FireWeapon();
         ZoomWeapon();
+        UpdateAmmo();
     }
 
     //Fire the weapon
     private void FireWeapon()
     {
-        if (Input.GetButton(Tags.BUTTON_FIRE) && ammoSlot.GetAmmoAmount(ammoType) >= 0)
+        if (Input.GetButton(Tags.BUTTON_FIRE) && ammoSlot.GetAmmoAmount(ammoType) >= 1)
         {
             if (canShoot)
             {
@@ -105,6 +111,7 @@ public class Weapon : MonoBehaviour
     private void FireFX()
     {
         fireGun.Play();
+        myAudio.PlayOneShot(gunSound);
     }
 
     //play the effects of where the raycast hit
@@ -122,5 +129,11 @@ public class Weapon : MonoBehaviour
             zoom.IsZooming = !zoom.IsZooming;
             zoom.ZoomWeapon();
         }
+    }
+
+    //Displays the ammo
+    private void UpdateAmmo()
+    {
+        ammoText.text = ammoSlot.GetAmmoAmount(ammoType).ToString();
     }
 }

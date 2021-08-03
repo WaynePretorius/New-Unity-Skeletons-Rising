@@ -14,8 +14,7 @@ public class EnemyAI : MonoBehaviour
     private float distanceToTarget = Mathf.Infinity;
 
     //referenced Chaches declared
-    [Header("Enemy Ai Caches")]
-    [SerializeField] private Transform target;
+    private Transform target;
 
     private NavMeshAgent navAgent;
     private Animator myAnim;
@@ -23,11 +22,17 @@ public class EnemyAI : MonoBehaviour
     //states for the AI
     private bool isProvoked = false;
 
-    // Start is called before anything else
+    // Awake is called before anything else
     void Awake  ()
     {
         navAgent = GetComponent<NavMeshAgent>();
         myAnim = GetComponent<Animator>();
+    }
+
+    //method called on the first frame it is instantiated
+    private void Start()
+    {
+        target = FindObjectOfType<PlayerHealth>().gameObject.transform;
     }
 
     // Update is called once per frame
